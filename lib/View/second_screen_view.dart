@@ -28,8 +28,8 @@ class SecondScreenView extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.all(size.height * 0.01),
               padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.03,
-              vertical: size.height * 0.01,
+                horizontal: size.width * 0.03,
+                vertical: size.height * 0.01,
               ),
               width: size.width,
               child: Column(
@@ -37,10 +37,10 @@ class SecondScreenView extends StatelessWidget {
                 children: [
                   const Text(AppString.BioScreen,
                     style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontFamily: "Skranji"
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontFamily: "Skranji"
                     ),
                   ),
                   SizedBox(

@@ -1,4 +1,4 @@
-#Tue Oct 24 15:44:43 IST 2023
+#Wed Oct 25 03:52:58 IST 2023
 base.0=E\:\\Eul\\All_Files\\Codes\\Android\\UdayPalechaPortfolio\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

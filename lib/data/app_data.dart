@@ -16,10 +16,10 @@ class AppData{
       bio: devBio,
       skillAndProgress: <SkillAndProgress> [
         SkillAndProgress(
-            name:"Inventory Management WebApp" ,
+            name:"Inventory Management" ,
             progress:0.9),
         SkillAndProgress(
-            name:"Project Management WebApp" ,
+            name:"Project Management" ,
             progress: 0.8),
         SkillAndProgress(
             name: "PowerTrack" ,
@@ -28,6 +28,5 @@ class AppData{
   );
 
     static const String devBio = """Hello there! My name is Uday Palecha and I'm a 4th Year student pursuing my CSE degree from Kurukshetra University.
-    As a computer science undergraduate, I possess strong skills in DSA and also have a keen interest in giving back to the community.
-    I have done so by actively participated in hackathons, coding competitions and also contributed to various open-source projects, such as GitHub documentation, and my personal favourite being The Odin Project.""";
+    I possess strong skills in DSA and have actively participated in hackathons, coding competitions and also contributed to various open-source projects.""";
 }

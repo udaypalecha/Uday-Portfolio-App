@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/data/app_data.dart';
+import 'package:my_portfolio/Utils/app_string.dart';
 import 'package:my_portfolio/widget/progress_bar.dart';
 import 'package:my_portfolio/widget/skillsContainer.dart';
 
@@ -38,32 +39,7 @@ class FirstScreenView extends StatelessWidget {
               fontFamily: "Gloock"
           ),
         ),
-        // Hiding the FIRST skills container
-        // SizedBox(
-        //   height: size.height * 0.03,
-        // ),
-        // Card(
-        //   elevation: 10,
-        //   shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.circular(20)
-        //   ),
-        //   color: Colors.grey.shade300,
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(15.0),
-        //     child: Wrap(
-        //       crossAxisAlignment: WrapCrossAlignment.center,
-        //       alignment: WrapAlignment.center,
-        //       spacing: size.width * 0.05,
-        //       runSpacing: size.width * 0.05,
-        //       children: List.generate(
-        //         AppData.modelData.skillAndProgress.length,
-        //         (index) => SkillsContainer(
-        //           SkillsTitle: AppData.modelData.skillAndProgress[index].name
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),
+        // UN-HIDING the FIRST skills container
         SizedBox(
           height: size.height * 0.03,
         ),
@@ -74,30 +50,56 @@ class FirstScreenView extends StatelessWidget {
           ),
           color: Colors.grey.shade300,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              //Add a heading
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(AppString.ProjectsScreen,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontFamily: "Skranji"
-                  ),
+            padding: const EdgeInsets.all(15.0),
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              spacing: size.width * 0.05,
+              runSpacing: size.width * 0.05,
+              children: List.generate(
+                AppData.modelData.skillAndProgress.length,
+                (index) => SkillsContainer(
+                  SkillsTitle: AppData.modelData.skillAndProgress[index].name
                 ),
-                List.generate(
-                  AppData.modelData.skillAndProgress.length,
-                      (index) => ProgressBar(
-                      progresstitle: AppData.modelData.skillAndProgress[index].name,
-                      // progresss: AppData.modelData.skillAndProgress[index].progress
-                  ),
-                ),
-              ]
+              ),
             ),
           ),
         ),
+        // HIDING 2nd skills bar
+        // SizedBox(
+        //   height: size.height * 0.03,
+        // ),
+        // Card(
+        //   elevation: 10,
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(20)
+        //   ),
+        //   color: Colors.grey.shade300,
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(10.0),
+        //     child: Column(
+        //       //Add a heading
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         const Text(AppString.ProjectsScreen,
+        //           style: TextStyle(
+        //             fontSize: 24,
+        //             fontWeight: FontWeight.bold,
+        //             color: Colors.black,
+        //             fontFamily: "Skranji"
+        //           ),
+        //         ),
+        //         List.generate(
+        //           AppData.modelData.skillAndProgress.length,
+        //               (index) => ProgressBar(
+        //               progresstitle: AppData.modelData.skillAndProgress[index].name,
+        //               progresss: AppData.modelData.skillAndProgress[index].progress
+        //           ),
+        //         ),
+        //       ]
+        //     ),
+        //   ),
+        // ),
         Expanded(child: Container()),
         IconButton(
           onPressed:onNextPage ,

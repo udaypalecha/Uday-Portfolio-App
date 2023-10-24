@@ -9,8 +9,8 @@ class FirstScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size   = MediaQuery.of(context).size;
-    return  Column(
+    Size size = MediaQuery.of(context).size;
+    return Column(
       children: [
         SizedBox(
           height: size.height * 0.05,
@@ -23,7 +23,7 @@ class FirstScreenView extends StatelessWidget {
           ),
           child: CircleAvatar(
             radius: size.height * 0.12,
-            backgroundImage:const AssetImage("asset/Uday_Palecha.jpg"),
+            backgroundImage: const AssetImage("asset/Uday_Palecha.jpg"),
             backgroundColor: Colors.grey,
           ),
         ),
@@ -38,57 +38,70 @@ class FirstScreenView extends StatelessWidget {
               fontFamily: "Gloock"
           ),
         ),
+        // Hiding the FIRST skills container
+        // SizedBox(
+        //   height: size.height * 0.03,
+        // ),
+        // Card(
+        //   elevation: 10,
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(20)
+        //   ),
+        //   color: Colors.grey.shade300,
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(15.0),
+        //     child: Wrap(
+        //       crossAxisAlignment: WrapCrossAlignment.center,
+        //       alignment: WrapAlignment.center,
+        //       spacing: size.width * 0.05,
+        //       runSpacing: size.width * 0.05,
+        //       children: List.generate(
+        //         AppData.modelData.skillAndProgress.length,
+        //         (index) => SkillsContainer(
+        //           SkillsTitle: AppData.modelData.skillAndProgress[index].name
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
         SizedBox(
           height: size.height * 0.03,
         ),
         Card(
           elevation: 10,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20)
-          ),
-          color: Colors.grey.shade300,
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Wrap(
-              crossAxisAlignment: WrapCrossAlignment.center,
-              alignment: WrapAlignment.center,
-              spacing: size.width * 0.05,
-              runSpacing: size.width * 0.05,
-              children: List.generate(
-                AppData.modelData.skillAndProgress.length,
-                    (index) =>SkillsContainer(
-                    SkillsTitle: AppData.modelData.skillAndProgress[index].name
-                ),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: size.height * 0.03,
-        ),
-        Card(
-          elevation: 10,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20)
+            borderRadius: BorderRadius.circular(20)
           ),
           color: Colors.grey.shade300,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
-              children: List.generate(AppData.modelData.skillAndProgress.length,
-                    (index) => ProgressBar(
-                    progresstitle: AppData.modelData.skillAndProgress[index].name,
-                    progresss: AppData.modelData.skillAndProgress[index].progress
+              //Add a heading
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(AppString.ProjectsScreen,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: "Skranji"
+                  ),
                 ),
-              ),
+                List.generate(
+                  AppData.modelData.skillAndProgress.length,
+                      (index) => ProgressBar(
+                      progresstitle: AppData.modelData.skillAndProgress[index].name,
+                      // progresss: AppData.modelData.skillAndProgress[index].progress
+                  ),
+                ),
+              ]
             ),
           ),
         ),
         Expanded(child: Container()),
         IconButton(
           onPressed:onNextPage ,
-          icon:const Icon(Icons.arrow_downward,
-            size: 30,),
+          icon:const Icon(Icons.arrow_downward, size: 30,),
           color: Colors.black,
         ),
         SizedBox(
